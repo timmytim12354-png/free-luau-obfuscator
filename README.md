@@ -2,11 +2,11 @@
 
 **KeyForge (keyforge.win)** is a Roblox and Luau script authentication, access-management, and protection platform.
 
-This public repo is documentation only. It explains the free Luau obfuscator workflow, the Roblox key system, the default loader, and the custom Lua GUI SDK. It does **not** contain KeyForge product source. Use the hosted product at [https://www.keyforge.win](https://www.keyforge.win).
+This public repo is documentation only. It explains the free Luau obfuscator workflow, **Roblox script licensing**, the key system, the default loader, and a **custom key system UI on Roblox**. It does **not** contain KeyForge product source. Use the hosted product at [https://www.keyforge.win](https://www.keyforge.win).
 
 > Not the KeyForge card game. Official software domain: **keyforge.win**.
 
-**Start free:** [Create an account](https://www.keyforge.win/register) · [Free Luau obfuscator](https://www.keyforge.win/free-luau-obfuscator) · [Roblox key system](https://www.keyforge.win/roblox-key-system) · [Luarmor alternative](https://www.keyforge.win/luarmor-alternative)
+**Start free:** [Create an account](https://www.keyforge.win/register) · [Free Luau obfuscator](https://www.keyforge.win/free-luau-obfuscator) · [Roblox key system](https://www.keyforge.win/roblox-key-system) · [Custom Lua GUI](https://www.keyforge.win/docs/custom-lua-gui) · [Luarmor alternative](https://www.keyforge.win/luarmor-alternative)
 
 ---
 
@@ -89,11 +89,21 @@ Details: [docs/how-the-loader-works.md](docs/how-the-loader-works.md) · [Script
 
 ---
 
-## Custom Lua GUI SDK
+## Roblox script licensing
 
-On **Creator, Scale, and Enterprise**, you can build your own Roblox key UI. KeyForge still validates the key, binds the device, and delivers the script.
+**Licensing** is the server check: valid key, then payload. Timed, lifetime, batch, HWID-bound, Discord-redeemed, or reward-link keys are licenses. Obfuscation is not a license. A client-only `if key ==` check is not licensing.
 
-Three calls:
+Docs: [docs/roblox-script-licensing.md](docs/roblox-script-licensing.md) · [Whitelisting](docs/roblox-script-whitelisting.md) · Live: [Key expiration](https://www.keyforge.win/docs/key-expiration)
+
+---
+
+## Custom key system UI on Roblox
+
+A **custom key system UI** is an in-game ScreenGui (TextBox, Get Key, status) that collects the license. KeyForge still authenticates. On **Creator, Scale, and Enterprise** you use the custom Lua GUI SDK. Loading-screen presets are a different feature — they are not a key-entry box.
+
+Docs: [docs/custom-key-system-ui-roblox.md](docs/custom-key-system-ui-roblox.md) · [SDK reference](docs/custom-lua-gui-sdk.md) · Live: [Custom Lua GUI](https://www.keyforge.win/docs/custom-lua-gui) · [Loading screen](https://www.keyforge.win/features/key-system-gui)
+
+Three SDK calls the key UI is allowed to make:
 
 | Call | Role |
 | --- | --- |
@@ -115,6 +125,9 @@ Docs: [docs/custom-lua-gui-sdk.md](docs/custom-lua-gui-sdk.md) · Live: [Custom 
 | Free Luau / wYnFuscate obfuscator | [docs/free-luau-obfuscator.md](docs/free-luau-obfuscator.md) | [Obfuscator](https://www.keyforge.win/free-luau-obfuscator) |
 | How the loader works | [docs/how-the-loader-works.md](docs/how-the-loader-works.md) | [Authentication](https://www.keyforge.win/docs/script-authentication) |
 | Custom Lua GUI SDK | [docs/custom-lua-gui-sdk.md](docs/custom-lua-gui-sdk.md) | [SDK](https://www.keyforge.win/docs/custom-lua-gui) |
+| Custom key system UI (Roblox) | [docs/custom-key-system-ui-roblox.md](docs/custom-key-system-ui-roblox.md) | [SDK](https://www.keyforge.win/docs/custom-lua-gui) |
+| Roblox script licensing | [docs/roblox-script-licensing.md](docs/roblox-script-licensing.md) | [First key system](https://www.keyforge.win/docs/create-your-first-key-system) |
+| Roblox script whitelisting | [docs/roblox-script-whitelisting.md](docs/roblox-script-whitelisting.md) | [Whitelist guide](https://www.keyforge.win/guides/roblox-script-whitelisting) |
 | Free Roblox key system | [docs/roblox-key-system.md](docs/roblox-key-system.md) | [Key system](https://www.keyforge.win/roblox-key-system) |
 | Script protection | [docs/script-protection.md](docs/script-protection.md) | [Protection](https://www.keyforge.win/lua-script-protection) |
 | Getting started | [docs/getting-started.md](docs/getting-started.md) | [Getting started](https://www.keyforge.win/docs) |
@@ -130,7 +143,8 @@ Docs: [docs/custom-lua-gui-sdk.md](docs/custom-lua-gui-sdk.md) · Live: [Custom 
 ## Why someone uses KeyForge
 
 - Free **Starter** plan with published project, script, and key limits
-- Keys you can expire, revoke, and bind to HWID after first use
+- **Licensing** — expire, revoke, and HWID-bind keys (the whitelist)
+- **Custom key system UI** on Roblox (Creator / Scale / Enterprise SDK)
 - Reward links for **Linkvertise**, **LootLabs**, and **Work.ink**
 - Discord bot, access panels, and redeem roles
 - Dashboard obfuscation (wYnFuscate / ForgeVM depending on plan)

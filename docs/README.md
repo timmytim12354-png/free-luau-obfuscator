@@ -8,6 +8,9 @@ These pages match the public SEO explainers on [keyforge.win](https://www.keyfor
 | [Free Luau obfuscator](free-luau-obfuscator.md) | wYnFuscate + dashboard workflow |
 | [How the loader works](how-the-loader-works.md) | `/v1/load` handshake, no internals |
 | [Custom Lua GUI SDK](custom-lua-gui-sdk.md) | Headless client: verify + load |
+| [Custom key system UI on Roblox](custom-key-system-ui-roblox.md) | In-game key GUI / license prompt |
+| [Roblox script licensing](roblox-script-licensing.md) | License keys, timed access, revoke |
+| [Roblox script whitelisting](roblox-script-whitelisting.md) | Keys as the allow-list |
 | [Roblox key system](roblox-key-system.md) | License before delivery |
 | [Script protection](script-protection.md) | Layers, not a hidden URL |
 | [Getting started](getting-started.md) | Project → script → key → loader |

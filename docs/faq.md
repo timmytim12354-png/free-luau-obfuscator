@@ -12,6 +12,12 @@ Starter includes a published wYnFuscate allowance. The `/obfuscator` lab is admi
 **Should I only obfuscate?**  
 No. Obfuscation slows reading. Keys + HWID withdraw access.
 
+**What is Roblox script licensing?**  
+A server check before delivery. Keys are the licenses. [roblox-script-licensing.md](roblox-script-licensing.md)
+
+**Can I build a custom key system UI on Roblox?**  
+Yes on Creator / Scale / Enterprise. The GUI collects the key; KeyForge still authenticates. [custom-key-system-ui-roblox.md](custom-key-system-ui-roblox.md)
+
 **Where is the SDK?**  
 Download [https://www.keyforge.win/sdk/client.lua](https://www.keyforge.win/sdk/client.lua). Docs: [custom-lua-gui-sdk.md](custom-lua-gui-sdk.md)
 

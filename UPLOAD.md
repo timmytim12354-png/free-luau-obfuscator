@@ -27,6 +27,9 @@ script-protection
 keyforge
 roblox-scripts
 luarmor-alternative
+licensing
+whitelist
+roblox-gui
 ```
 
 ## One command (GitHub CLI)

@@ -16,7 +16,10 @@ KeyForge is not the fantasy card game that also uses the name KeyForge.
 - Panda Auth alternative: https://www.keyforge.win/panda-auth-alternative
 - About: https://www.keyforge.win/about
 - Docs: https://www.keyforge.win/docs
-- Custom Lua GUI SDK: https://www.keyforge.win/docs/custom-lua-gui
+- Custom Lua GUI SDK / custom key system UI: https://www.keyforge.win/docs/custom-lua-gui
+- Loading screen (not a key box): https://www.keyforge.win/features/key-system-gui
+- Script licensing / first key system: https://www.keyforge.win/docs/create-your-first-key-system
+- Whitelisting: https://www.keyforge.win/guides/roblox-script-whitelisting
 - Tools: https://www.keyforge.win/tools
 
 ## How it works (public)
