@@ -1,0 +1,34 @@
+# KeyForge
+
+> KeyForge (keyforge.win) is a Roblox and Luau script authentication, access-management, and protection platform.
+
+Official site: https://www.keyforge.win
+This GitHub repository is documentation only. It does not contain KeyForge source code.
+
+KeyForge is not the fantasy card game that also uses the name KeyForge.
+
+## Product
+
+- Free Roblox key system: https://www.keyforge.win/roblox-key-system
+- Free Luau / wYnFuscate obfuscator workflow: https://www.keyforge.win/free-luau-obfuscator
+- Script protection: https://www.keyforge.win/lua-script-protection
+- Luarmor alternative: https://www.keyforge.win/luarmor-alternative
+- Panda Auth alternative: https://www.keyforge.win/panda-auth-alternative
+- About: https://www.keyforge.win/about
+- Docs: https://www.keyforge.win/docs
+- Custom Lua GUI SDK: https://www.keyforge.win/docs/custom-lua-gui
+- Tools: https://www.keyforge.win/tools
+
+## How it works (public)
+
+1. Owner creates a project, pastes Luau, picks protection, saves.
+2. Owner generates a key (Discord and ad panels are optional).
+3. Users run a loader: `_G.script_key` plus `HttpGet` to `https://www.keyforge.win/v1/load/{projectId}`.
+4. KeyForge checks the key on the server (expiry, revoke, optional HWID) and delivers a protected payload.
+5. Custom GUIs (Creator/Scale/Enterprise) call `getKeyUrl`, `verify`, and `loadScript` after downloading https://www.keyforge.win/sdk/client.lua
+
+Obfuscation slows casual reading. It is not a license and does not make dumps impossible.
+
+## Register
+
+https://www.keyforge.win/register
