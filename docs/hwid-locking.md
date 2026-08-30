@@ -1,20 +1,9 @@
-# HWID locking on KeyForge
+# HWID bind (client handling)
 
-HWID lock means the key remembers the first client that redeemed it. Later machines get `HWID_MISMATCH` instead of the script.
+Bind happens **after the first successful run**, not when you generate the key. Enable it on the key in the dashboard. Later machines get `HWID_MISMATCH`.
 
-Live: [https://www.keyforge.win/docs/hwid-locking](https://www.keyforge.win/docs/hwid-locking) · Guide: [https://www.keyforge.win/guides/how-hwid-authentication-works](https://www.keyforge.win/guides/how-hwid-authentication-works)
+Custom UI: [../examples/hwid-example.lua](../examples/hwid-example.lua)
 
-## How to use it
+Reset from the dashboard or Discord when a buyer changes PCs and your policy allows it. Unlimited resets become a sharing desk. HWID stops casual sharing; it is not unbreakable DRM.
 
-1. Create or edit a key. Bind happens **after the first good run**, not at generation time.
-2. Test on one device. Confirm the key shows a bound device.
-3. Reset when you must. Buyers change PCs. Reset HWID from the dashboard or Discord when your policy allows it.
-
-## Honest limits
-
-- Do not promise unlimited HWID resets — that becomes a sharing desk.
-- Do not treat HWID as unbreakable DRM. It stops casual sharing, not a determined dumper.
-
-The custom Lua GUI SDK surfaces `HWID_MISMATCH`. The default loader shows a bound-device error.
-
-Local helper (format only, does not forge binds): [https://www.keyforge.win/tools/hwid-auth-tester](https://www.keyforge.win/tools/hwid-auth-tester)
+Live: [https://www.keyforge.win/docs/hwid-locking](https://www.keyforge.win/docs/hwid-locking)

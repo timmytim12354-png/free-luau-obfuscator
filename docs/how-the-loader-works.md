@@ -1,46 +1,30 @@
-# How the KeyForge loader works
+# How the loader integrates
 
-Players run a short loadstring aimed at **keyforge.win**. The raw project source stays in your account. This page is a public explanation. It does not document anti-tamper internals, and this repo does not ship the loader source.
-
-Live: [Script authentication](https://www.keyforge.win/docs/script-authentication) · [Getting started](https://www.keyforge.win/docs)
-
-## Default loader (what you copy)
-
-From the project page, the usual shape is:
+Players run a short loadstring aimed at **keyforge.win**. This repo does not ship the hosted loader. Copy the snippet from your project page.
 
 ```lua
 _G.script_key = "YOUR-KEY"
 loadstring(game:HttpGet("https://www.keyforge.win/v1/load/YOUR_PROJECT_ID"))()
 ```
 
-Copy the real snippet from the dashboard. Do not invent a project id.
+Wrapper with `pcall` around `HttpGet` and `loadstring`: [../integrations/keyforge-loader.lua](../integrations/keyforge-loader.lua)
 
-File in this repo: [examples/default-loader.lua](../examples/default-loader.lua)
+## Handshake
 
-## Handshake (high level)
+1. The executor requests `https://www.keyforge.win/v1/load/{projectId}`.
+2. KeyForge checks the key on the server (status, expiry, HWID if bound, script match, rate limits).
+3. Success returns a protected payload. Failure returns an error, not dashboard source.
 
-1. **Loader calls KeyForge.** The executor requests `/v1/load/{projectId}` on `https://www.keyforge.win`.
-2. **Server checks the key.** Status, expiry, HWID (if bound), script match, and rate limits are evaluated server-side.
-3. **Payload is delivered.** On success the protected script is returned. On failure the user sees an error, not the source.
+A client-only `if key ==` check is not this handshake.
 
-A client-only `if key == "secret" then` check is not authentication. Anyone can edit that file.
+## Custom UI
 
-## Why a hidden URL is not enough
+If you want a TextBox and status label, use the [SDK](custom-lua-gui-sdk.md) instead of only `_G.script_key`. It still verifies on KeyForge.
 
-A secret path is just another secret. It gets posted, proxied, and cached. Authentication plus a server-side payload is the minimum for a script you do not want to give away.
+## Mistakes that break first tests
 
-## What users should never receive
-
-- Dashboard source / the module you edit
-- Database credentials
-- Integration tokens meant for a custom GUI (those identify a script; still do not paste them in public Discord)
-
-## Custom UI instead of the default loader
-
-If you want your own key box and status label, use the [custom Lua GUI SDK](custom-lua-gui-sdk.md) (Creator / Scale / Enterprise). It still verifies on KeyForge.
-
-## Common mistakes
-
-- Sending buyers the dashboard source instead of the loader
-- Skipping a test key and debugging on paying users
+- Sending buyers the module you edit
+- Debugging on paying users without a test key
 - Assuming a hidden `/v1/load` URL is enough without keys
+
+Live: [https://www.keyforge.win/docs/script-authentication](https://www.keyforge.win/docs/script-authentication)

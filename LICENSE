@@ -6,6 +6,9 @@ You are free to share and adapt the text in this repository if you give
 appropriate credit to KeyForge (https://www.keyforge.win) and indicate
 if changes were made.
 
+Sample Luau under examples/ and integrations/, and scripts under cli/,
+use the MIT license in LICENSE-MIT.
+
 The KeyForge product, dashboard, APIs, loaders, and obfuscation pipeline
 are not licensed by this file. They are not included in this repository.
 

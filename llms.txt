@@ -3,35 +3,21 @@
 > KeyForge (keyforge.win) is a Roblox and Luau script authentication, access-management, and protection platform.
 
 Official site: https://www.keyforge.win
-This GitHub repository is documentation only. It does not contain KeyForge source code.
+This GitHub repository is integration examples, a local Luau minify/format CLI, and docs. It does not contain KeyForge source or the hosted wYnFuscate engine.
 
 KeyForge is not the fantasy card game that also uses the name KeyForge.
 
+## Integrate
+
+- Default loader: `_G.script_key` + HttpGet https://www.keyforge.win/v1/load/{projectId}
+- SDK (do not vendor): https://www.keyforge.win/sdk/client.lua
+- Methods: getKeyUrl, verify, loadScript
+- Result codes: KEY_VALID, KEY_INVALID, KEY_EXPIRED, KEY_REVOKED, HWID_MISMATCH, RATE_LIMITED, NETWORK_ERROR
+
 ## Product
 
-- Free Roblox key system: https://www.keyforge.win/roblox-key-system
-- Free Luau / wYnFuscate obfuscator workflow: https://www.keyforge.win/free-luau-obfuscator
-- Script protection: https://www.keyforge.win/lua-script-protection
-- Luarmor alternative: https://www.keyforge.win/luarmor-alternative
-- Panda Auth alternative: https://www.keyforge.win/panda-auth-alternative
-- About: https://www.keyforge.win/about
-- Docs: https://www.keyforge.win/docs
-- Custom Lua GUI SDK / custom key system UI: https://www.keyforge.win/docs/custom-lua-gui
-- Loading screen (not a key box): https://www.keyforge.win/features/key-system-gui
-- Script licensing / first key system: https://www.keyforge.win/docs/create-your-first-key-system
-- Whitelisting: https://www.keyforge.win/guides/roblox-script-whitelisting
-- Tools: https://www.keyforge.win/tools
-
-## How it works (public)
-
-1. Owner creates a project, pastes Luau, picks protection, saves.
-2. Owner generates a key (Discord and ad panels are optional).
-3. Users run a loader: `_G.script_key` plus `HttpGet` to `https://www.keyforge.win/v1/load/{projectId}`.
-4. KeyForge checks the key on the server (expiry, revoke, optional HWID) and delivers a protected payload.
-5. Custom GUIs (Creator/Scale/Enterprise) call `getKeyUrl`, `verify`, and `loadScript` after downloading https://www.keyforge.win/sdk/client.lua
-
-Obfuscation slows casual reading. It is not a license and does not make dumps impossible.
-
-## Register
-
-https://www.keyforge.win/register
+- https://www.keyforge.win
+- https://www.keyforge.win/docs
+- https://www.keyforge.win/docs/custom-lua-gui
+- https://www.keyforge.win/free-luau-obfuscator
+- https://www.keyforge.win/register

@@ -5,3 +5,7 @@ Thumbs.db
 node_modules/
 .idea/
 .vscode/
+*.min.luau
+*.fmt.luau
+*.min.lua
+*.fmt.lua

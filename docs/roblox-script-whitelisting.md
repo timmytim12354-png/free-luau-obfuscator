@@ -1,28 +1,11 @@
-# Roblox script whitelisting
+# Treating keys as a whitelist
 
-A **whitelist** is the list of licenses allowed to receive the script. On KeyForge, **keys are that list**. An unlisted user should fail closed. A secret filename, a hidden loader URL, or a “don’t leak this” Discord message is not a whitelist.
+A whitelist is the list of licenses allowed to receive the script. On KeyForge, each active key is an entry. Discord redeem and reward-link issuance add entries through those channels. An unlisted user should fail closed.
 
-Live: [https://www.keyforge.win/guides/roblox-script-whitelisting](https://www.keyforge.win/guides/roblox-script-whitelisting) · [Script authentication](https://www.keyforge.win/docs/script-authentication)
+A secret filename or a hidden `/v1/load` URL is not a whitelist. Anyone who has the loadstring can share it; KeyForge still refuses delivery unless the key is active, not expired, not revoked, and optionally bound to the first device.
 
-Related searches: Roblox whitelist system, Lua whitelist, Luau whitelist, script whitelist host, HWID whitelist, Discord whitelist panel.
+In-game prompt: [custom-key-system-ui-roblox.md](custom-key-system-ui-roblox.md). The GUI is not the whitelist.
 
-## Whitelist vs security through obscurity
+Whitelisting does not erase a dumped file. It stops new authorized runs. Pair with HWID and [hosted obfuscation](hosted-obfuscation.md) if casual sharing is the problem.
 
-If someone has the loadstring, they can share it. Whitelisting means KeyForge still refuses delivery unless the key (the whitelist entry) is active, not expired, not revoked, and optionally bound to the first device.
-
-## How entries get on the list
-
-- You create keys or a batch in the dashboard
-- A buyer redeems in Discord (`/panel`, roles)
-- A player finishes a Linkvertise / LootLabs / Work.ink gate
-- You revoke or expire an entry when it should leave the list
-
-That is [Roblox script licensing](roblox-script-licensing.md) with a different search word.
-
-## Custom whitelist UI
-
-If you want an in-game whitelist / key prompt, build a [custom key system UI on Roblox](custom-key-system-ui-roblox.md). The GUI is not the whitelist. KeyForge is.
-
-## Honest limits
-
-Whitelisting does not make a dumped file vanish. It stops **new** authorized runs. Pair it with HWID and [obfuscation](free-luau-obfuscator.md) if casual sharing is the problem.
+Live: [https://www.keyforge.win/guides/roblox-script-whitelisting](https://www.keyforge.win/guides/roblox-script-whitelisting)

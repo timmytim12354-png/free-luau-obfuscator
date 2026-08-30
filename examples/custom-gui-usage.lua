@@ -1,6 +1,6 @@
--- KeyForge custom Lua GUI usage (documentation only).
--- This is not the SDK. Download the official client from keyforge.win.
--- Creator / Scale / Enterprise: https://www.keyforge.win/docs/custom-lua-gui
+-- KeyForge custom Lua GUI usage (MIT example).
+-- Not the SDK. Fetches https://www.keyforge.win/sdk/client.lua
+-- Creator / Scale / Enterprise. Docs: https://www.keyforge.win/docs/custom-lua-gui
 
 local sdkUrl = "https://www.keyforge.win/sdk/client.lua"
 local downloaded, sdkSource = pcall(function()
@@ -28,13 +28,40 @@ local client = KeyForge.new({
     integrationToken = "SIGNED_TOKEN_FROM_DASHBOARD",
 })
 
--- Optional: copy the linked reward-gate URL
--- local url, response = client:getKeyUrl()
+-- Replace these with your ScreenGui instances.
+local keyTextBox = { Text = "" }
+local statusLabel = { Text = "" }
 
--- Wire these to your own ScreenGui controls:
--- local verified = client:verify(keyTextBox.Text)
--- if not verified.ok then
---     statusLabel.Text = verified.message
---     return
--- end
--- local loaded = client:loadScript()
+local function setStatus(text)
+    statusLabel.Text = text
+end
+
+local function onGetKey()
+    local url, response = client:getKeyUrl()
+    if url then
+        if type(setclipboard) == "function" then
+            setclipboard(url)
+        end
+        setStatus("Key link copied")
+        return
+    end
+    setStatus((response and response.message) or "No reward link is attached to this script.")
+end
+
+local function onVerify()
+    setStatus("Checking key...")
+    local verified = client:verify(keyTextBox.Text)
+    if not verified.ok then
+        setStatus(verified.message)
+        return
+    end
+    setStatus("Loading securely...")
+    local loaded = client:loadScript()
+    if not loaded.ok then
+        setStatus(loaded.message)
+    end
+end
+
+-- getKeyButton.MouseButton1Click:Connect(onGetKey)
+-- verifyButton.MouseButton1Click:Connect(onVerify)
+return { client = client, onGetKey = onGetKey, onVerify = onVerify }
