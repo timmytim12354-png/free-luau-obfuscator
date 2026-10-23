@@ -25,7 +25,7 @@ SDK (always fetch live, do not vendor): `https://www.keyforge.win/sdk/client.lua
 Product pages (why KeyForge, plan limits, competitor notes) stay on the website:
 
 - [keyforge.win](https://www.keyforge.win)
-- [Free Luau / wYnFuscate workflow](https://www.keyforge.win/free-luau-obfuscator)
+- [Free Luau / wYnFuscate workflow](https://www.keyforge.win/en/free-luau-obfuscator)
 - [Custom Lua GUI](https://www.keyforge.win/docs/custom-lua-gui)
 - [Luarmor alternative](https://www.keyforge.win/luarmor-alternative)
 
@@ -74,7 +74,9 @@ This only strips comments / extra whitespace or reindents. It does **not** repla
 
 ## Hosted obfuscation (dashboard)
 
-When you save a script you can pick a protection method. KeyForge can obfuscate on save (wYnFuscate allowance by plan) and serve that build from the loader. Starter includes a published allowance; higher plans raise or remove the cap. The `/obfuscator` lab is admin-gated — not a public paste tool.
+KeyForge has a [public free Luau obfuscator](https://www.keyforge.win/en/obfuscator): paste source and download protected output without an administrator account. Public submissions are subject to server-side rate limits and compilation resource budgets.
+
+The dashboard separately lets script owners choose a protection method when saving a project script, then serve the protected build through their authenticated loader. Protection methods and allowances depend on the plan; see [current pricing](https://www.keyforge.win/en/pricing). Older descriptions of `/obfuscator` as admin-gated are outdated.
 
 Confirm live limits on [keyforge.win](https://www.keyforge.win/#pricing). Workflow: [docs/hosted-obfuscation.md](docs/hosted-obfuscation.md)
 

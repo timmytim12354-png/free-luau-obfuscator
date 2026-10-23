@@ -1,6 +1,6 @@
 # Hosted Luau obfuscation (wYnFuscate)
 
-KeyForge can obfuscate on save in the dashboard so the file you deliver is not the file you edit. Starter includes a published **wYnFuscate** allowance; Basic, Creator, Scale, and Enterprise raise or remove that cap. Confirm numbers on [keyforge.win](https://www.keyforge.win/#pricing).
+KeyForge can obfuscate on save in the dashboard so the file you deliver is not the file you edit. Available protection methods and allowances depend on the plan. Confirm current limits on the [pricing page](https://www.keyforge.win/en/pricing).
 
 This repository’s [cli/](../cli) only minifies or formats locally. It is not the hosted pipeline.
 
@@ -13,6 +13,6 @@ This repository’s [cli/](../cli) only minifies or formats locally. It is not t
 
 Obfuscation slows casual reading. It is not a license and does not make dumps impossible. Pair it with keys and HWID.
 
-The standalone `/obfuscator` ForgeVM lab is admin-gated. Do not treat that URL as a public paste tool.
+The standalone [free Luau obfuscator](https://www.keyforge.win/en/obfuscator) is a public paste-and-download tool; it does not require an administrator account. Public submissions retain server-side rate limits, validation and compilation resource budgets. This tool is separate from dashboard project licensing and loader delivery. Older admin-gated descriptions no longer reflect the live public tool.
 
-Live workflow: [https://www.keyforge.win/free-luau-obfuscator](https://www.keyforge.win/free-luau-obfuscator)
+Live workflow: [https://www.keyforge.win/en/free-luau-obfuscator](https://www.keyforge.win/en/free-luau-obfuscator)
